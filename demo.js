@@ -10,6 +10,16 @@
       iconAnchor: [12, 39],
       shadowUrl: null
   });
+  
+
+    var personIcon = L.icon({
+      iconUrl: 'active.pitch.large.png',
+      iconSize: [35, 90],
+      iconAnchor: [12, 39],
+      shadowUrl: null
+  });
+  
+  
 
   
   
@@ -77,7 +87,7 @@ L.polyline([[14.6547381691, 121.058757305],
 [14.6550080439, 121.064293385],
 [14.6549665247, 121.05871439]])
       ],
-      markers = [];
+      markers = [bikeIcon, personIcon];
 
   map.addLayer(new L.TileLayer(config.tileUrl, {attribution: config.tileAttrib}));
   map.addLayer(new L.TileLayer(config.overlayTileUrl));
@@ -87,41 +97,46 @@ L.polyline([[14.6547381691, 121.058757305],
 
   function drawLine(i, routeLine) {
     var marker = L.animatedMarker(routeLine.getLatLngs(), {
-      icon: bikeIcon,
+      icon: markers.shift(),
       autoStart: true,
-	  distance: 250,  // meters
+	  distance: 1000,  // meters
 	  interval: 2000, // milliseconds
       onEnd: function() {
-
+	drawLine(i, routeLine);
 	  $(this._shadow).fadeOut();
-        $(this._icon).fadeOut(3000, function(){
+        $(this._icon).fadeOut(100, function(){
           map.removeLayer(this);
-		  drawLine(i, routeLine);
+		  
         });
       }
     });
 
     map.addLayer(marker);
-    markers.push(marker);
+//    markers.push(marker);
+	markers.push(personIcon);
+	markers.push(bikeIcon);
   };
  
    $.each(routeLines, function(i, routeLine) {
    var marker = L.animatedMarker(routeLine.getLatLngs(), {
-      icon: bikeIcon,
+      icon: markers.shift(),
       autoStart: true,
-	  distance: 500,  // meters
+	  distance: 1000,  // meters
 	  interval: 2000, // milliseconds
       onEnd: function() {
 		drawLine(i, routeLine);
 	  $(this._shadow).fadeOut();
-       $(this._icon).fadeOut(3000, function(){
+       $(this._icon).fadeOut(100, function(){
          map.removeLayer(this);
         });
       }
     });
 
     map.addLayer(marker);
-    markers.push(marker);
+    //markers.push(marker);
+	markers.push(personIcon);
+	markers.push(bikeIcon);
+
   });
  
   
