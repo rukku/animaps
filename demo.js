@@ -99,7 +99,7 @@ L.polyline([[14.6547381691, 121.058757305],
     var marker = L.animatedMarker(routeLine.getLatLngs(), {
       icon: markers.shift(),
       autoStart: true,
-	  distance: 1000,  // meters
+	  distance: 500,  // meters
 	  interval: 2000, // milliseconds
       onEnd: function() {
 	drawLine(i, routeLine);
@@ -121,7 +121,7 @@ L.polyline([[14.6547381691, 121.058757305],
    var marker = L.animatedMarker(routeLine.getLatLngs(), {
       icon: markers.shift(),
       autoStart: true,
-	  distance: 1000,  // meters
+	  distance: 500,  // meters
 	  interval: 2000, // milliseconds
       onEnd: function() {
 		drawLine(i, routeLine);
