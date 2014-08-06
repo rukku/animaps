@@ -18,8 +18,8 @@
       overlayTileUrl : 'http://{s}.tiles.mapbox.com/v3/intertwine.nyc_bike_overlay/{z}/{x}/{y}.png',
       tileAttrib : 'Routing powered by <a href="http://opentripplanner.org/">OpenTripPlanner</a>, Map tiles &copy; Development Seed and OpenStreetMap ',
       initLatLng : new L.LatLng( 14.6550288034, 121.073176861), // NYC
-      initZoom : 17,
-      minZoom : 17,
+      initZoom : 16,
+      minZoom : 10,
       maxZoom : 17
   };
 
@@ -61,7 +61,21 @@
 [14.6542814572, 121.072940826],
 [14.6548627267, 121.073133945],
 ]),
-
+L.polyline([[14.6547381691, 121.058757305],
+[14.6548627267, 121.064229012],
+[14.6537417056, 121.064829826],
+[14.6539493025, 121.072704792],
+[14.6545720922, 121.073133945],
+[14.6554024756, 121.073176861],
+[14.6560460206, 121.072940826],
+[14.656149818, 121.07272625],
+[14.6592014396, 121.07272625],
+[14.6594297905, 121.072490215],
+[14.6594505497, 121.068520546],
+[14.6560875395, 121.068584919],
+[14.656149818, 121.064786911],
+[14.6550080439, 121.064293385],
+[14.6549665247, 121.05871439]])
       ],
       markers = [];
 
@@ -69,17 +83,39 @@
   map.addLayer(new L.TileLayer(config.overlayTileUrl));
   map.setView(config.initLatLng, config.initZoom);
 
+  
 
-  $.each(routeLines, function(i, routeLine) {
+  function drawLine(i, routeLine) {
     var marker = L.animatedMarker(routeLine.getLatLngs(), {
       icon: bikeIcon,
-      autoStart: false,
-	  distance: 150,  // meters
+      autoStart: true,
+	  distance: 250,  // meters
 	  interval: 2000, // milliseconds
       onEnd: function() {
-        $(this._shadow).fadeOut();
+
+	  $(this._shadow).fadeOut();
         $(this._icon).fadeOut(3000, function(){
           map.removeLayer(this);
+		  drawLine(i, routeLine);
+        });
+      }
+    });
+
+    map.addLayer(marker);
+    markers.push(marker);
+  };
+ 
+   $.each(routeLines, function(i, routeLine) {
+   var marker = L.animatedMarker(routeLine.getLatLngs(), {
+      icon: bikeIcon,
+      autoStart: true,
+	  distance: 500,  // meters
+	  interval: 2000, // milliseconds
+      onEnd: function() {
+		drawLine(i, routeLine);
+	  $(this._shadow).fadeOut();
+       $(this._icon).fadeOut(3000, function(){
+         map.removeLayer(this);
         });
       }
     });
@@ -87,7 +123,8 @@
     map.addLayer(marker);
     markers.push(marker);
   });
-
+ 
+  
  $(function() {
   $('#start').click(function() {
     console.log('start');
