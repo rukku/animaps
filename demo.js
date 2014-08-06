@@ -17,7 +17,7 @@
       tileUrl : 'http://{s}.tiles.mapbox.com/v3/openplans.map-g4j0dszr/{z}/{x}/{y}.png',
       overlayTileUrl : 'http://{s}.tiles.mapbox.com/v3/intertwine.nyc_bike_overlay/{z}/{x}/{y}.png',
       tileAttrib : 'Routing powered by <a href="http://opentripplanner.org/">OpenTripPlanner</a>, Map tiles &copy; Development Seed and OpenStreetMap ',
-      initLatLng : new L.LatLng( 14.654670700356128 ,121.06419146060944), // NYC
+      initLatLng : new L.LatLng( 14.6550288034, 121.073176861), // NYC
       initZoom : 17,
       minZoom : 17,
       maxZoom : 17
