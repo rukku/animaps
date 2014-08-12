@@ -21,8 +21,8 @@
 
     var flameIcon = L.icon({
       iconUrl: 'fire.png',
-      iconSize: [20, 50],
-      iconAnchor: [12, 39],
+      iconSize: [24, 30],
+      iconAnchor: [12, 12],
       shadowUrl: null
   });  
   
