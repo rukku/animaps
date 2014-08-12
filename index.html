@@ -19,6 +19,12 @@
 
 <link rel="stylesheet" href="style.css" />
 
+<!-- To Cartagenize -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<!--Loads Prototype.js-->
+<script src="js/prototype.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="cartagenstyle.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
 <!-- make legacy Internet Explorer play nice(r) -->
 <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,12 +36,58 @@
   <hgroup id="logo">
     <div class="ribbon">
       <h1 id="site-title"><span><a href="http://cibi.me" title="cibi.me" rel="home">Beta</a></span></h1>
-      <h2 id="site-description">AnimatedMarker</h2>
+      <h2 id="site-description">IskoMaps</h2>
     </div>
   </hgroup>
 </header>
 
+
   <div id="map"></div>
+
+
+<div id="brief">
+    <script type="text/javascript" charset="utf-8">
+        if (Prototype.Browser.MobileSafari) {$('brief').hide()}
+    </script>
+    <div class="column first" id="brief_first">
+        <h2><img src="logo.small.png" alt="NDRRMC"><br />
+            <small>A viewer for emergency responders<br />
+            by <a href="http://unterbahn.com">SRDP Consulting</a>
+            <br />
+            <a href="http://wiki.cartagen.org">More Info</a> |
+            <a href="http://github.com/jywarren/cartagen/">Source</a> |
+            <a href="http://unterbahn.com/tag/cartagen/">Blog</a>
+            <a href="javascript:void(0);" onClick="$('description').show();$">[Show]</a>
+            </small></h2>
+
+        <script type="text/javascript" charset="utf-8">
+            function find(q) {
+                q = q.replace(' ','-')
+                document.location = "/find/"+q
+            }
+        </script>
+    
+    </div>
+    
+    <div id="description">
+        <div style="float:right;margin:5px;"><a href="javascript:void(0);" onClick="$('description').hide();$('brief').style.width = '28%';$('brief_first').style.width = '92%';">[hide]</a></div>
+  
+        <div class="column">
+            <h3>Clusters</h3>
+            <p>Points cluster together when map is zoomed out</p>
+            
+        </div>
+        <div class="column">
+            <h3>Basemap</h3>
+            <p> The viewer pulls tiles from Cloudmade. Data displayed here is from <a href="http://openstreetmap.org">OpenStreetMap</a> (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>)</p>
+        </div>
+        <div class="column">
+            <h3>Responder information</h3>
+            <p>Specific information like contact persons and the name of the facility can be obtained by clicking on the markers.</p>
+           
+        </div>
+    </div>
+</div>
 
  
 
