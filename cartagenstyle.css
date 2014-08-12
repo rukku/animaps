@@ -126,7 +126,7 @@ canvas {
 
 #brief {
 	line-height:1.4em;
-	width:28%;
+	width:95%;
 	padding:8px;
 	margin:12px;
 	position:absolute; bottom:0; left:0;
@@ -145,7 +145,7 @@ canvas {
 	margin-bottom:16px;
 }
 #brief div.column.first {
-	width:98%;
+	width:22%;
 }
 #brief h3 {
 	margin-top:20px;
