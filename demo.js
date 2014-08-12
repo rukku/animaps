@@ -92,8 +92,7 @@ L.polyline([[14.6547381691, 121.058757305],
 [14.656149818, 121.064786911],
 [14.6550080439, 121.064293385],
 [14.6549665247, 121.05871439]]),
-
-      ],
+      ], 
 	  tokiroute = [L.polyline([[14.6478251102, 121.071717739],
 [14.6475448464, 121.071438789],
 [14.647306103, 121.070837975],
@@ -156,7 +155,15 @@ L.polyline([[14.6547381691, 121.058757305],
 [14.6481365139, 121.072318554],
 [14.647887391, 121.071825027],
 ])],
-      markers = [bikeIcon, personIcon, flameIcon];
+bonfireroute = [L.polyline([[14.6550962721, 121.072431207],
+[14.6552467789, 121.07226491],
+[14.6550910822, 121.072130799],
+[14.6549717146, 121.072307825],
+[14.6550599428, 121.072409749],
+])]
+,
+     markers = [bikeIcon, personIcon, flameIcon];
+     // markers = [];
 
   map.addLayer(new L.TileLayer(config.tileUrl, {attribution: config.tileAttrib}));
   map.addLayer(new L.TileLayer(config.overlayTileUrl));
@@ -181,14 +188,63 @@ L.polyline([[14.6547381691, 121.058757305],
     });
 
     map.addLayer(marker);
-//    markers.push(marker);
+    //markers.push(marker);
 	markers.push(personIcon);
 	markers.push(bikeIcon);
-		markers.push(flameIcon);
+	markers.push(flameIcon);
+
   };
  
+   function drawToki(i, routeLine) {
+    var marker = L.animatedMarker(routeLine.getLatLngs(), {
+      icon: flameIcon,
+      autoStart: true,
+	  distance: 500,  // meters
+	  interval: 2000, // milliseconds
+      onEnd: function() {
+	drawToki(i, routeLine);
+	  $(this._shadow).fadeOut();
+        $(this._icon).fadeOut(100, function(){
+          map.removeLayer(this);
+		  
+        });
+      }
+    });
+
+    map.addLayer(marker);
+    //markers.push(marker);
+	markers.push(personIcon);
+	markers.push(bikeIcon);
+	markers.push(flameIcon);
+
+  };
  
-   $.each(routeLines, function(i, routeLine) {
+    function drawFire(i, routeLine) {
+    var marker = L.animatedMarker(routeLine.getLatLngs(), {
+      icon: flameIcon,
+      autoStart: true,
+	  distance: 500,  // meters
+	  interval: 2000, // milliseconds
+      onEnd: function() {
+	drawFire(i, routeLine);
+	  $(this._shadow).fadeOut();
+        $(this._icon).fadeOut(100, function(){
+          map.removeLayer(this);
+		  
+        });
+      }
+    });
+
+    map.addLayer(marker);
+    //markers.push(marker);
+	markers.push(personIcon);
+	markers.push(bikeIcon);
+	markers.push(flameIcon);
+
+  };
+ 
+  
+ $.each(routeLines, function(i, routeLine) {
    var marker = L.animatedMarker(routeLine.getLatLngs(), {
       icon: markers.shift(),
       autoStart: true,
@@ -203,13 +259,14 @@ L.polyline([[14.6547381691, 121.058757305],
       }
     });
 
-	    map.addLayer(marker);
-    //markers.push(marker);
+	  map.addLayer(marker);
+      //markers.push(marker);
 	markers.push(personIcon);
 	markers.push(bikeIcon);
-		markers.push(flameIcon);
+	markers.push(flameIcon);
   });
-	
+
+  
 	$.each(tokiroute, function(i, routeLine) {
    var marker = L.animatedMarker(routeLine.getLatLngs(), {
       icon: flameIcon,
@@ -217,7 +274,7 @@ L.polyline([[14.6547381691, 121.058757305],
 	  distance: 500,  // meters
 	  interval: 2000, // milliseconds
       onEnd: function() {
-		drawLine(i, routeLine);
+		drawToki(i, routeLine);
 	  $(this._shadow).fadeOut();
        $(this._icon).fadeOut(100, function(){
          map.removeLayer(this);
@@ -227,11 +284,35 @@ L.polyline([[14.6547381691, 121.058757305],
 
     map.addLayer(marker);
     //markers.push(marker);
-	markers.push(personIcon);
-	markers.push(bikeIcon);
-		markers.push(flameIcon);
+	 markers.push(personIcon);
+	 markers.push(bikeIcon);
+	 markers.push(flameIcon);
   });
+
+	$.each(bonfireroute, function(i, routeLine) {
+   var marker = L.animatedMarker(routeLine.getLatLngs(), {
+      icon: flameIcon,
+      autoStart: true,
+	  distance: 500,  // meters
+	  interval: 2000, // milliseconds
+      onEnd: function() {
+		drawFire(i, routeLine);
+	  $(this._shadow).fadeOut();
+       $(this._icon).fadeOut(100, function(){
+         map.removeLayer(this);
+        });
+      }
+    });
+
+    map.addLayer(marker);
+    //markers.push(marker);
+	 markers.push(personIcon);
+	 markers.push(bikeIcon);
+	 markers.push(flameIcon);
+  });
+  
  
+
   
  $(function() {
   $('#start').click(function() {
