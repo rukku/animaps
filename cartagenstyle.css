@@ -1,3 +1,15 @@
+
+@media screen and (max-width: 600px) {
+  #brief {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+
 html {
 	font-family:georgia;
 	margin:0;

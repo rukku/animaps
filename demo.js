@@ -453,7 +453,7 @@ ovalroute = [L.polyline([[14.6550391832, 121.064282656],
     var marker = L.animatedMarker(routeLine.getLatLngs(), {
       icon: bike,
       autoStart: true,
-	  distance: 500,  // meters
+	  distance: 300,  // meters
 	  interval: 2000, // milliseconds
       onEnd: function() {
 	drawBike(i, routeLine);
@@ -477,7 +477,7 @@ ovalroute = [L.polyline([[14.6550391832, 121.064282656],
    var marker = L.animatedMarker(routeLine.getLatLngs(), {
       icon: bike,
       autoStart: true,
-	  distance: 500,  // meters
+	  distance: 300,  // meters
 	  interval: 2000, // milliseconds
       onEnd: function() {
 		drawBike(i, routeLine);
