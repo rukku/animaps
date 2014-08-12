@@ -6,7 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
 
 <head>
-<title>Leaflet AnimatedMarker Demo</title>
+<title>IskoMaps</title>
 <!--  Mobile Viewport Fix -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!-- Google WebFonts -->
@@ -18,12 +18,14 @@
 <![endif]-->
 
 <link rel="stylesheet" href="style.css" />
-
-<!-- To Cartagenize -->
-<script src="js/jquery-1.10.2.min.js"></script>
-<!--Loads Prototype.js-->
-<script src="js/prototype.js" type="text/javascript" charset="utf-8"></script>
 <link rel="stylesheet" href="cartagenstyle.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+
+<!--Loads Prototype.js-->
+<script src="js/jquery-1.10.2.min.js"></script>
+
+<script src="js/prototype.js" type="text/javascript" charset="utf-8"></script>
+
 
 <!-- make legacy Internet Explorer play nice(r) -->
 <!--[if lt IE 9]>
@@ -47,51 +49,23 @@
 
 <div id="brief">
     <script type="text/javascript" charset="utf-8">
-        if (Prototype.Browser.MobileSafari) {$('brief').hide()}
+        if (Prototype.Browser.MobileSafari) {jQuery('#brief').hide()}
     </script>
     <div class="column first" id="brief_first">
         <h2><img src="logo.small.png" alt="NDRRMC"><br />
-            <small>A viewer for emergency responders<br />
-            by <a href="http://unterbahn.com">SRDP Consulting</a>
+            <small>Maps maps<br />
+            by <a href="http://rukku.bitbucket.org/upcat/routes/about.html">UPCAT Maps</a>
             <br />
             <a href="http://wiki.cartagen.org">More Info</a> |
             <a href="http://github.com/jywarren/cartagen/">Source</a> |
             <a href="http://unterbahn.com/tag/cartagen/">Blog</a>
-            <a href="javascript:void(0);" onClick="$('description').show();$">[Show]</a>
             </small></h2>
-
-        <script type="text/javascript" charset="utf-8">
-            function find(q) {
-                q = q.replace(' ','-')
-                document.location = "/find/"+q
-            }
-        </script>
-    
     </div>
     
-    <div id="description">
-        <div style="float:right;margin:5px;"><a href="javascript:void(0);" onClick="$('description').hide();$('brief').style.width = '28%';$('brief_first').style.width = '92%';">[hide]</a></div>
-  
-        <div class="column">
-            <h3>Clusters</h3>
-            <p>Points cluster together when map is zoomed out</p>
-            
-        </div>
-        <div class="column">
-            <h3>Basemap</h3>
-            <p> The viewer pulls tiles from Cloudmade. Data displayed here is from <a href="http://openstreetmap.org">OpenStreetMap</a> (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>)</p>
-        </div>
-        <div class="column">
-            <h3>Responder information</h3>
-            <p>Specific information like contact persons and the name of the facility can be obtained by clicking on the markers.</p>
-           
-        </div>
-    </div>
-</div>
+ </div>
 
  
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="js/jquery-1.10.2.min.js"></script>
   <script src="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet-src.js"></script>
   <script src="src/AnimatedMarker.js"></script>
   <script src="demo.js"></script>
