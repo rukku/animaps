@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'/>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src='./static/underscore-min.js'></script>
+<script src='./static/mapbox.js'></script>
+<link href='./static/mapbox.css' rel='stylesheet' />
+<script type="text/javascript" src="./static/routes.js"></script>
+<link href='./static/style.css' rel='stylesheet' />
+<style>
+.d3-vec { position:absolute; }
+path {
+  fill: #000;
+  fill-opacity: .05;
+  stroke: green;
+  stroke-opacity: 0.50;
+  stroke-width: 15.0px;
+  }
+</style>
+</head>
+<body class='section-0'>
+<script src='http://d3js.org/d3.v2.min.js'></script>
+
+<div id='pane'><div id='map'></div></div>
+
+<article>
+
+<!--[if lt IE 9]>
+
+Only edit after this
+
+<![endif]-->
+
+    <section id='cover' class='cover active'>
+    <h1>LRT 2 Katipunan <br><br> or Marikina<br><br>to Institute of Biology<br> (Pav 4) </h1>
+    <p>by DiliMaps</p>
+    <small class='scroll'>Scroll ▼</small>
+  </section>
+
+<p><section id='katips'>
+<h2>Katipunan Jeepney Terminal</h2>
+<p align='justify'>From Marikina, alight at Aurora Blvd corner Katipunan and walk towards the <b>jeepney terminal</b> under the Katipunan Flyover.
+<br><br>
+If you’re coming from the <b>LRT-2 Katipunan Station</b>, take the <b>North Exit</b> on the same side as St. Bridget, opposite PSBA. Walk towards the jeepney terminal under the Katipunan Flyover.
+<br><br>
+There are two queues calling UP at the terminal. Make sure you ride the <b>jeep which goes inside the campus</b> (the jeep line closer to Ministop). The other jeep line (farther from Ministop) goes to Tandang Sora passing through MWSS and will not go inside UP. To be sure, ask the barker before boarding.</p>
+</section></p>
+<section id='romulo-shed'>
+  <p align='justify'>The UP-Katipunan jeep enters UP Diliman through the <b>gate opposite MWSS</b> (Manila Water).Upon entry to UP, you'll see the GT Toyota Building (white) on the left.</p>
+  <br><br>
+  <img src='https://lh6.googleusercontent.com/OoK8Mc7tOKshhMgBIwYZwaSDcfMk2HFxl2H_gh8IhgoL_nFO02O2ksV7_aSHMJ57ci_h94azoFmxmrlke95jSQviVYrBusSSqiWNufPZtaonNx6FEmsOnJmUKA'>
+  <br><br>
+  The Jeep will have traversed most of its route inside UP before it reaches the stop nearest the Institute of Biology (Pav 4) so prepare for a long ride ahead!It will pass by establishments such as the UP Health Service, and University Shopping Center, as well as several dormitories.</p>
+  </section>
+
+<p><section id='theatre'>
+    <p align='justify'>
+      <img src='https://lh5.googleusercontent.com/0vpmOU67QTBC64g9qIDGbJIGD6xfGpUw8bAUJqo4rbH2cywfa6zbBzHQeFJQLhWYwXZ1xscBPi2XNYDN4xwtJhAsQDuwLHThYXuLsa6v7CEgOAhp--7UwPnR'>
+    <br><br>
+    The jeep will pass by several establishments, colleges, and dormitories, as well as notable UP landmarks such as the <b>UP Carillon</b>.</p>
+  </section></p>
+<p><section id='oble'>
+    <img src='https://lh5.googleusercontent.com/Yz5J2JH1WOC3rDIvLnC-0kHeuK0F7Q8I7KXhRWGsx79Ev4f_xbZFySb49DLnGdWV-52yjPxcneu3kx2XpNdRy_e7hNYH-41eLrYwb7Q5HBn8saCd2RuffH4d'>
+    <p>The jeep will also circuit the Academic Oval and pass by the <b>Oblation </b>plaza.</p>
+    </section></p>
+<section id='as-shed'>
+<h2>Palma Hall waiting shed</h2>
+<img src='https://lh5.googleusercontent.com/zt-dHhJpAJdgGrfahgxMVVdFNb54pZ7lCsMBVmd7EE-4RF2FclJp9CrPLBqf8XFiHR5wJL2c3vb2KJCTO0OXPtxdag-mr1HDmpMybk3f_7VekM1zHuA_qRi8'>
+<br><br>
+<p align='justify'>Get off at the <b>Palma Hall stop</b> (known as AS shed). Take the street beside Palma Hall. You will walk past <b>CASAA</b> (to your left).
+</p>
+</section>
+
+<section id='bio'>
+<h2>Institute of Biology (Pavilion 4)</h2>
+<p align='justify'>The Institute of Biology (Pav 4) is located at the back of Palma Hall (within the same block). Entrance to the Institute of Biology (Pav 4) is  through <b>Llamas Hall</b>.</p>
+</section>
+
+<section id='che'>
+    <h2>If you’re running late and there’s too much traffic:</h2>
+    <p align="justify">The Palma Hall jeepney stop is one of the last stops of the UP-Katipunan jeep inside UP before the jeep goes back to Katipunan again.
+    <br><br>
+    If you do not have time to spare (10-15 minutes before call time), alight at the <b>foot bridge along Katipunan Avenue</b> connecting the old UP Integrated School compound to the main campus. There is a lesser known <b>pedestrian entrance here marked by a guard house</b>. You are essentially at the side of UP College of Home Economics.
+    <br><br>
+    Cross the foot bridge, go through the pedestrian entrance, and make a run for it. You only need to <b>run straight toward Institute of Biology (Pav 4)</b> from here. Entrance to Institute of Biology (Pav 4) is through <b>Llamas Hall</b>.  Aja!</p>
+  </section>
+
+<!--[if lt IE 9]>
+
+Do not edit beyond this
+
+<![endif]-->
+
+</article>
+
+<script>
+//For the D3 layer
+function d3layer() {
+    var f = {}, bounds, feature, collection;
+    var div = d3.select(document.body)
+        .append("div")
+        .attr('class', 'd3-vec'),
+        svg = div.append('svg'),
+        g = svg.append("g");
+
+    f.parent = div.node();
+
+    f.project = function(x) {
+      var point = f.map.locationPoint({ lat: x[1], lon: x[0] });
+      return [point.x, point.y];
+    };
+
+    var first = true;
+    f.draw = function() {
+      first && svg.attr("width", f.map.dimensions.x)
+          .attr("height", f.map.dimensions.y)
+          .style("margin-left", "0px")
+          .style("margin-top", "0px") && (first = false);
+
+      path = d3.geo.path().projection(f.project);
+      feature.attr("d", path);
+    };
+
+    f.data = function(x) {
+        collection = x;
+        bounds = d3.geo.bounds(collection);
+        feature = g.selectAll("path")
+            .data(collection.features)
+            .enter().append("path");
+        return f;
+    };
+
+    f.extent = function() {
+        return new MM.Extent(
+            new MM.Location(bounds[0][1], bounds[0][0]),
+            new MM.Location(bounds[1][1], bounds[1][0]));
+    };
+    return f;
+}
+
+var tiles = mapbox.layer().tilejson({
+  tiles: [ "http://a.tiles.mapbox.com/v3/examples.map-liczq28b/{z}/{x}/{y}.png" ]
+});
+var spots = mapbox.markers.layer()
+  // Load up markers from geojson data.
+  .features(geojson)
+  // Define a new factory function. Takes geojson input and returns a
+  // DOM element that represents the point.
+  .factory(function(f) {
+    var el = document.createElement('div');
+    el.className = 'spot spot-' + f.properties.id;
+    return el;
+  });
+// Creates the map with tile and marker layers and
+// no input handlers (mouse drag, scrollwheel, etc).
+var map = mapbox.map('map', [spots], null, []);
+
+//Add baselayer
+map.addLayer(new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/examples.map-szwdot65/{Z}/{X}/{Y}.png'));
+map.ui.attribution.add()
+    .content('Map tiles by <a href="http://stamen.com">Mapbox</a>, under' +
+    ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
+    ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
+// Add Jeep Route
+var jeep = d3layer().data(green);
+//map.addLayer(jeep);
+
+
+map.addLayer(spots);
+
+// Array of story section elements.
+var sections = document.getElementsByTagName('section');
+
+// Array of marker elements with order matching section elements.
+var markers = _(sections).map(function(section) {
+  return _(spots.markers()).find(function(m) {
+    return m.data.properties.id === section.id;
+  });
+});
+
+// Helper to set the active section.
+var setActive = function(index, ease) {
+  // Set active class on sections, markers.
+  _(sections).each(function(s) { s.className = s.className.replace(' active', '') });
+  _(markers).each(function(m) { m.element.className = m.element.className.replace(' active', '') });
+  sections[index].className += ' active';
+  markers[index].element.className += ' active';
+
+  // Set a body class for the active section.
+  document.body.className = 'section-' + index;
+
+  // Ease map to active marker.
+  if (!ease) {
+    map.centerzoom(markers[index].location, markers[index].data.properties.zoom||20);
+  } else {
+    map.ease.location(markers[index].location).zoom(markers[index].data.properties.zoom||20).optimal(0.5, 2);
+  }
+
+  return true;
+};
+
+// Bind to scroll events to find the active section.
+window.onscroll = _(function() {
+  // IE 8
+  if (window.pageYOffset === undefined) {
+    var y = document.documentElement.scrollTop;
+    var h = document.documentElement.clientHeight;
+  } else {
+    var y = window.pageYOffset;
+    var h = window.innerHeight;
+  }
+
+  // If scrolled to the very top of the page set the first section active.
+  if (y === 0) return setActive(0, true);
+
+  // Otherwise, conditionally determine the extent to which page must be
+  // scrolled for each section. The first section that matches the current
+  // scroll position wins and exits the loop early.
+  var memo = 0;
+  var buffer = (h * 0.3333);
+  var active = _(sections).any(function(el, index) {
+    memo += el.offsetHeight;
+    return y < (memo-buffer) ? setActive(index, true) : false;
+  });
+
+  // If no section was set active the user has scrolled past the last section.
+  // Set the last section active.
+  if (!active) setActive(sections.length - 1, true);
+}).debounce(10);
+
+
+// Set map to first section.
+setActive(0, false);
+
+
+//var myLayer = L.geoJson(ikot).addTo(map);
+</script>
+
+</body>
+</html>

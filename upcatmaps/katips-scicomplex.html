@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'/>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src='./static/underscore-min.js'></script>
+<script src='./static/mapbox.js'></script>
+<link href='./static/mapbox.css' rel='stylesheet' />
+<script type="text/javascript" src="./static/routes.js"></script>
+<link href='./static/style.css' rel='stylesheet' />
+<style>
+.d3-vec { position:absolute; }
+path {
+  fill: #000;
+  fill-opacity: .05;
+  stroke: green;
+  stroke-opacity: 0.50;
+  stroke-width: 15.0px;
+  }
+</style>
+</head>
+<body class='section-0'>
+<script src='http://d3js.org/d3.v2.min.js'></script>
+
+<div id='pane'><div id='map'></div></div>
+
+<article>
+
+<!--[if lt IE 9]>
+
+Only edit after this
+
+<![endif]-->
+
+    <section id='cover' class='cover active'>
+    <h1>From LRT 2 Katipunan <br><br>or Marikina <br><br>to National Science Complex</h1>
+    <h3><ul>
+      <li>Institute of Chemistry</li>
+      <li>National Institute of Physics</li>
+      <li>Institute of Math</li></h3>
+    <p>by DiliMaps</p>
+    <small class='scroll'>Scroll ▼</small>
+  </section>
+
+<section id='katips'>
+  <h2>Katipunan Jeepney Terminal</h2>
+  <p align='justify'>From Marikina, alight at Aurora Blvd corner Katipunan and walk towards the <b>jeepney terminal</b> under the Katipunan Flyover.
+  <br><br>
+  If you’re coming from the <b>LRT-2 Katipunan Station</b>, take the <b>North Exit</b> on the same side as St. Bridget, opposite PSBA. Walk towards the jeepney terminal under the Katipunan Flyover.
+  <br><br>
+  There are two queues calling UP at the terminal. Make sure you <b>ride the jeep which goes inside the campus</b> (the jeep line closer to Ministop). The other jeep line (farther from Ministop) goes to Tandang Sora and will not go inside UP. To be sure, ask the barker before boarding.</p>
+</section>
+
+<section id='che-bridge'>
+  <h2>UP Integrated School foot bridge</h2>
+  <p align='justify'>Alight at the <b>foot bridge along Katipunan Avenue</b> connecting the old UP Integrated School compound to the main campus. There is a lesser known <b>pedestrian entrance here marked by a guard house</b>.
+    <br><br>Cross the foot bridge and enter the campus. From here you will be navigating on foot for about 500 meters. This is the fastest and most straightforward route to the <b>National Science Complex</b>.
+    <br><br>
+    Walk forward until you reach <b>Ma. Regidor St</b> then take a left turn.</p>
+  </section>
+
+<section id='chem'>
+  <p justify='center'><img src='https://lh3.googleusercontent.com/s2woZoQAZ_Vs6xElaFErjhKPArby-BlHRtbKlPqsiZiYJXRjAUPHwI71freFj088KuTjh1U4kJ9qwxQmgQ8ehiCqnNgFt8tSDxzYesFPqNvjEh97xDh-oBqQ'></p>
+  <p>You will walk past the <b>PAGASA Observatory</b> on your way to the National Science Complex.</p></section>
+
+<section id='chem'>
+  <h2>Institute of Chemistry</h2>
+  <img src='https://lh3.googleusercontent.com/ILTEMuRsyYQ9RNgxzQr5NS15Ed5zk6saSK-CNAy1gAEcGorGYIWaC_4mpV5KjH9P13hNShj_9V2dINCRfqJsJjLQkK9M4WM7EjWMj7CLGQZNd_Qy3wrPFMLN' align='center'>
+  <br><br>
+  <p align='justify'>After you walk past the Observatory, the <b>Institute of Chemistry</b> building should be to your left, before A. Ma. Regidor St. slopes down and intersects with the National Science Complex oval. The building has an unmistakable facade of bonded atoms.</p>
+</section>
+
+<section id='physics'>
+  <h2>National Institute of Physics</h2>
+  <img src='https://lh3.googleusercontent.com/gzsymYe5Mx8K07YPE5fx_-aRrKkUOdiY8BTjSFFZ8ZzAF8_8xeTiG5KwZbJ1oo1dIk3r2KgZ1rR0k3z2T-sFeFEqM0wHViGdnUJ9yQM6r2JHn_nD6ycJciVf'>
+  <br><br>
+  <p align='justify'>Facing the National Science Complex Amphitheater, the <b>National Institute of Physics</b> should be visible behind it on its right-hand side. The building has a rough tan finishing and a characteristic cylindrical annex.
+  <br><br>
+  To get there continue walking left of the <b>amphitheater</b>. The left fork will lead you to the building's side entry.</p>
+</section>
+
+<section id='math'>
+  <h2>Institute of Mathematics</h2>
+  <img src='https://lh6.googleusercontent.com/29S2lyDGOL89_4_cUzPpHBJYOg8zsmZBwuFu8Lb12a1_m7JAl0PBFVw7nkE7ZwX_yKkFytYKSQatWZzV5j63V8fqiAt9aZmVpkRvGe-vFX8bMUY57wUtiZ6j'>
+  <br><br>
+  <p align='justify'>Facing the National Science Complex Amphitheater, the <b>Institute of Mathematics</b> is located behind it on its left-hand side. However, the building may not be completely visible as it stands on lower terrain.
+  <br><br>
+  Walk down the road between the <b>Amphitheater</b> and the <b>Computational Science Research Center</b>. At the junction, the Institute of Mathematics should now be visible with its green roof. A path for pedestrians leads to the Institute's parking lot and entrance.</p>
+</section>
+
+<!--[if lt IE 9]>
+
+Do not edit beyond this
+
+<![endif]-->
+
+</article>
+
+<script>
+//For the D3 layer
+function d3layer() {
+    var f = {}, bounds, feature, collection;
+    var div = d3.select(document.body)
+        .append("div")
+        .attr('class', 'd3-vec'),
+        svg = div.append('svg'),
+        g = svg.append("g");
+
+    f.parent = div.node();
+
+    f.project = function(x) {
+      var point = f.map.locationPoint({ lat: x[1], lon: x[0] });
+      return [point.x, point.y];
+    };
+
+    var first = true;
+    f.draw = function() {
+      first && svg.attr("width", f.map.dimensions.x)
+          .attr("height", f.map.dimensions.y)
+          .style("margin-left", "0px")
+          .style("margin-top", "0px") && (first = false);
+
+      path = d3.geo.path().projection(f.project);
+      feature.attr("d", path);
+    };
+
+    f.data = function(x) {
+        collection = x;
+        bounds = d3.geo.bounds(collection);
+        feature = g.selectAll("path")
+            .data(collection.features)
+            .enter().append("path");
+        return f;
+    };
+
+    f.extent = function() {
+        return new MM.Extent(
+            new MM.Location(bounds[0][1], bounds[0][0]),
+            new MM.Location(bounds[1][1], bounds[1][0]));
+    };
+    return f;
+}
+
+var tiles = mapbox.layer().tilejson({
+  tiles: [ "http://a.tiles.mapbox.com/v3/examples.map-liczq28b/{z}/{x}/{y}.png" ]
+});
+var spots = mapbox.markers.layer()
+  // Load up markers from geojson data.
+  .features(geojson)
+  // Define a new factory function. Takes geojson input and returns a
+  // DOM element that represents the point.
+  .factory(function(f) {
+    var el = document.createElement('div');
+    el.className = 'spot spot-' + f.properties.id;
+    return el;
+  });
+// Creates the map with tile and marker layers and
+// no input handlers (mouse drag, scrollwheel, etc).
+var map = mapbox.map('map', [spots], null, []);
+
+//Add baselayer
+map.addLayer(new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/examples.map-szwdot65/{Z}/{X}/{Y}.png'));
+map.ui.attribution.add()
+    .content('Map tiles by <a href="http://stamen.com">Mapbox</a>, under' +
+    ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
+    ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
+// Add Jeep Route
+var jeep = d3layer().data(green);
+//map.addLayer(jeep);
+
+
+map.addLayer(spots);
+
+// Array of story section elements.
+var sections = document.getElementsByTagName('section');
+
+// Array of marker elements with order matching section elements.
+var markers = _(sections).map(function(section) {
+  return _(spots.markers()).find(function(m) {
+    return m.data.properties.id === section.id;
+  });
+});
+
+// Helper to set the active section.
+var setActive = function(index, ease) {
+  // Set active class on sections, markers.
+  _(sections).each(function(s) { s.className = s.className.replace(' active', '') });
+  _(markers).each(function(m) { m.element.className = m.element.className.replace(' active', '') });
+  sections[index].className += ' active';
+  markers[index].element.className += ' active';
+
+  // Set a body class for the active section.
+  document.body.className = 'section-' + index;
+
+  // Ease map to active marker.
+  if (!ease) {
+    map.centerzoom(markers[index].location, markers[index].data.properties.zoom||20);
+  } else {
+    map.ease.location(markers[index].location).zoom(markers[index].data.properties.zoom||20).optimal(0.5, 2);
+  }
+
+  return true;
+};
+
+// Bind to scroll events to find the active section.
+window.onscroll = _(function() {
+  // IE 8
+  if (window.pageYOffset === undefined) {
+    var y = document.documentElement.scrollTop;
+    var h = document.documentElement.clientHeight;
+  } else {
+    var y = window.pageYOffset;
+    var h = window.innerHeight;
+  }
+
+  // If scrolled to the very top of the page set the first section active.
+  if (y === 0) return setActive(0, true);
+
+  // Otherwise, conditionally determine the extent to which page must be
+  // scrolled for each section. The first section that matches the current
+  // scroll position wins and exits the loop early.
+  var memo = 0;
+  var buffer = (h * 0.3333);
+  var active = _(sections).any(function(el, index) {
+    memo += el.offsetHeight;
+    return y < (memo-buffer) ? setActive(index, true) : false;
+  });
+
+  // If no section was set active the user has scrolled past the last section.
+  // Set the last section active.
+  if (!active) setActive(sections.length - 1, true);
+}).debounce(10);
+
+
+// Set map to first section.
+setActive(0, false);
+
+
+//var myLayer = L.geoJson(ikot).addTo(map);
+</script>
+
+</body>
+</html>

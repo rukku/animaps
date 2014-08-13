@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'/>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src='./static/underscore-min.js'></script>
+<script src='./static/mapbox.js'></script>
+<link href='./static/mapbox.css' rel='stylesheet' />
+<script type="text/javascript" src="./static/routes.js"></script>
+<link href='./static/style.css' rel='stylesheet' />
+<style>
+.d3-vec { position:absolute; }
+path {
+  fill: #000;
+  fill-opacity: .05;
+  stroke: green;
+  stroke-opacity: 0.50;
+  stroke-width: 15.0px;
+  }
+</style>
+</head>
+<body class='section-0'>
+<script src='http://d3js.org/d3.v2.min.js'></script>
+
+<div id='pane'><div id='map'></div></div>
+
+<article>
+
+<!--[if lt IE 9]>
+
+Only edit after this
+
+<![endif]-->
+
+    <section id='cover' class='cover active'>
+  <h1>From Fairview to SOLAIR* and NCPAG**</h1>
+  <p>*School of Labor and Industrial Relations
+    <br>**National College of Public Administration and Governance</p>
+  <br><br>
+  <p>by DiliMaps</p>
+    <small class='scroll'>Scroll ▼</small>
+  </section>
+
+<section id='fairview'>
+  <h2>Fairview</h2>
+  <p align='justify'>From Commonwealth area, take any jeep that can drop you off at Philcoa.</p>
+</section>
+
+<section id='philcoa'>
+  <h2>Philcoa</h2>
+  <p align='justify'>Step off from the jeep at <b>Philcoa foot bridge</b> near Petron and cross to the side of McDonald's.
+  <br><br>
+  Take the <b>UP-Philcoa Jeep</b>. The terminal is located at the back of McDonald’s. At times, drivers also wait for passengers out front.
+  <br><br>
+  When in a hurry, you can also opt to ride UP-SM North and UP-Pantranco jeeps unloading passengers in the area.</p>
+</section>
+
+<section id='checkpoint'>
+  <h2>University Avenue Checkpoint</h2>
+  <img src='https://lh5.googleusercontent.com/sMFt20bUa525jdRRFqegGWrHP-A4iiqN7wZCUrEv_Edn8tX7nf0VN4-dhMJww8Vi9VMnnEI764dF3HveU6Nq27hIrAt-W327uv3hsNWzkZudF9B4FnS2-Gus'>
+  <p align=’justify’>Get off at the <b>Checkpoint</b> where two white angular waiting sheds flank each side of the University Avenue. Generally, vehicles slow down for a security check as they approach the area so this should not be hard to miss.
+  <br><br>
+  Cross to the other side via the pedestrian lane then walk down <b>Emilio Jacinto St</b>.</p>
+</section>
+
+<section id='solair'>
+  <h2>SOLAIR (School of Labor and Industrial Relations)</h2>
+  <img src='https://lh4.googleusercontent.com/iEnctAascONqAUimJdcIDSHdf870nR5BsVkUJ-tQ9vK8GJcRNW9gT20wDsNHrgE56g7GZ3vlyPcsLClZdnwAkD97QvgnQVUOXiiuG9K7zlmfqwrFa0xXct-I'>
+  <br><br>
+  <p align='justify'>Continue walking down E. Jacinto St. until you pass the Institute of Small Scale Industries (ISSI).
+    <b>SOLAIR</b> should then be visible on your left, located at the corner of E. Jacinto and R.P. De Guzman St.</p>
+</section>
+
+<section id='ncpag'>
+  <h2>NCPAG (National College of Public Administration and Governance)</h2>
+  <img src='https://lh5.googleusercontent.com/MR-SUbfXTFvNlf6VpJrDDA7xmlQyVS2SHSLVb0oFKtE2AYAAnXvlsVgR5GI-GObwFI5qGgXILabhJ_1oyLsGwpuM_PdrgUou7MsmCNlA5KJBTuOfYRMTLVGU'>
+  <br><br>
+  <p align='justify'>If you’re going to <b>NCPAG</b>, turn left from SOLAIR at the intersection of E. Jacinto and R.P. De Guzman St. The NCPAG complex is at the end of the road and should be visible at this point.</p>
+</section>
+
+<!--[if lt IE 9]>
+
+Do not edit beyond this
+
+<![endif]-->
+
+</article>
+
+<script>
+//For the D3 layer
+function d3layer() {
+    var f = {}, bounds, feature, collection;
+    var div = d3.select(document.body)
+        .append("div")
+        .attr('class', 'd3-vec'),
+        svg = div.append('svg'),
+        g = svg.append("g");
+
+    f.parent = div.node();
+
+    f.project = function(x) {
+      var point = f.map.locationPoint({ lat: x[1], lon: x[0] });
+      return [point.x, point.y];
+    };
+
+    var first = true;
+    f.draw = function() {
+      first && svg.attr("width", f.map.dimensions.x)
+          .attr("height", f.map.dimensions.y)
+          .style("margin-left", "0px")
+          .style("margin-top", "0px") && (first = false);
+
+      path = d3.geo.path().projection(f.project);
+      feature.attr("d", path);
+    };
+
+    f.data = function(x) {
+        collection = x;
+        bounds = d3.geo.bounds(collection);
+        feature = g.selectAll("path")
+            .data(collection.features)
+            .enter().append("path");
+        return f;
+    };
+
+    f.extent = function() {
+        return new MM.Extent(
+            new MM.Location(bounds[0][1], bounds[0][0]),
+            new MM.Location(bounds[1][1], bounds[1][0]));
+    };
+    return f;
+}
+
+var tiles = mapbox.layer().tilejson({
+  tiles: [ "http://a.tiles.mapbox.com/v3/examples.map-liczq28b/{z}/{x}/{y}.png" ]
+});
+var spots = mapbox.markers.layer()
+  // Load up markers from geojson data.
+  .features(geojson)
+  // Define a new factory function. Takes geojson input and returns a
+  // DOM element that represents the point.
+  .factory(function(f) {
+    var el = document.createElement('div');
+    el.className = 'spot spot-' + f.properties.id;
+    return el;
+  });
+// Creates the map with tile and marker layers and
+// no input handlers (mouse drag, scrollwheel, etc).
+var map = mapbox.map('map', [spots], null, []);
+
+//Add baselayer
+map.addLayer(new MM.TemplatedLayer('http://c.tiles.mapbox.com/v3/examples.map-szwdot65/{Z}/{X}/{Y}.png'));
+map.ui.attribution.add()
+    .content('Map tiles by <a href="http://stamen.com">Mapbox</a>, under' +
+    ' <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>.' +
+    ' Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.');
+// Add Jeep Route
+var jeep = d3layer().data(green);
+//map.addLayer(jeep);
+
+
+map.addLayer(spots);
+
+// Array of story section elements.
+var sections = document.getElementsByTagName('section');
+
+// Array of marker elements with order matching section elements.
+var markers = _(sections).map(function(section) {
+  return _(spots.markers()).find(function(m) {
+    return m.data.properties.id === section.id;
+  });
+});
+
+// Helper to set the active section.
+var setActive = function(index, ease) {
+  // Set active class on sections, markers.
+  _(sections).each(function(s) { s.className = s.className.replace(' active', '') });
+  _(markers).each(function(m) { m.element.className = m.element.className.replace(' active', '') });
+  sections[index].className += ' active';
+  markers[index].element.className += ' active';
+
+  // Set a body class for the active section.
+  document.body.className = 'section-' + index;
+
+  // Ease map to active marker.
+  if (!ease) {
+    map.centerzoom(markers[index].location, markers[index].data.properties.zoom||20);
+  } else {
+    map.ease.location(markers[index].location).zoom(markers[index].data.properties.zoom||20).optimal(0.5, 2);
+  }
+
+  return true;
+};
+
+// Bind to scroll events to find the active section.
+window.onscroll = _(function() {
+  // IE 8
+  if (window.pageYOffset === undefined) {
+    var y = document.documentElement.scrollTop;
+    var h = document.documentElement.clientHeight;
+  } else {
+    var y = window.pageYOffset;
+    var h = window.innerHeight;
+  }
+
+  // If scrolled to the very top of the page set the first section active.
+  if (y === 0) return setActive(0, true);
+
+  // Otherwise, conditionally determine the extent to which page must be
+  // scrolled for each section. The first section that matches the current
+  // scroll position wins and exits the loop early.
+  var memo = 0;
+  var buffer = (h * 0.3333);
+  var active = _(sections).any(function(el, index) {
+    memo += el.offsetHeight;
+    return y < (memo-buffer) ? setActive(index, true) : false;
+  });
+
+  // If no section was set active the user has scrolled past the last section.
+  // Set the last section active.
+  if (!active) setActive(sections.length - 1, true);
+}).debounce(10);
+
+
+// Set map to first section.
+setActive(0, false);
+
+
+//var myLayer = L.geoJson(ikot).addTo(map);
+</script>
+
+</body>
+</html>
