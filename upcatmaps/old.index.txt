@@ -1,0 +1,138 @@
+        <div class="menu-item">
+          <h4><a href="#">College of Business Administration</a></h4>
+          <ul>
+            <li><a href="commonwealth-cba-se.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-cba-se.html">Katipunan Avenue</a></li>
+            <li><a href="smn-cba-se.html">North Avenue</a></li>
+            <li><a href="philcoa-cba-se.html">Philcoa</a></li>
+            <li><a href="qave-cba-se.html">Quezon Avenue</a></li>   
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#">School of Economics</a></h4>
+          <ul>
+            <li><a href="commonwealth-cba-se.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-cba-se.html">Katipunan Avenue</a></li>
+            <li><a href="smn-cba-se.html">North Avenue</a></li>
+            <li><a href="philcoa-cba-se.html">Philcoa</a></li>
+            <li><a href="qave-cba-se.html">Quezon Avenue</a></li>   
+          </ul>
+        </div>        <div class="menu-item">
+          <h4><a href="#">School of Labor and Industrial Relations</a></h4>
+          <ul>
+            <li><a href="commonwealth-solair-ncpag.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-solair-ncpag.html">Katipunan Avenue</a></li>
+            <li><a href="philcoa-solair-ncpag.html">Philcoa</a></li>
+            <li><a href="smn-solair-ncpag.html">North Avenue</a></li>
+            <li><a href="qave-solair-ncpag.html">Quezon Avenue</a></li>    
+          </ul>
+        </div> 
+        </div>        <div class="menu-item">
+          <h4><a href="#">National College of Public Administration and Governance</a></h4>
+          <ul>
+            <li><a href="commonwealth-solair-ncpag.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-solair-ncpag.html">Katipunan Avenue</a></li>
+            <li><a href="philcoa-solair-ncpag.html">Philcoa</a></li>
+            <li><a href="smn-solair-ncpag.html">North Avenue</a></li>
+            <li><a href="qave-solair-ncpag.html">Quezon Avenue</a></li>    
+          </ul>
+        </div>         
+        <div class="menu-item">
+          <h4><a href="#">College of Law (Malcolm Hall)</a></h4>
+          <ul>
+            <li><a href="commonwealth-mh-lc.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-mh-lc.html">Katipunan Avenue</a></li>
+            <li><a href="smn-mh-lc.html">North Avenue</a></li>
+            <li><a href="philcoa-mh-lc.html">Philcoa</a></li>
+            <li><a href="qave-mh-lc.html">Quezon Avenue</a></li>    
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#">Law Center (Bocobo Hall)</a></h4>
+          <ul>
+            <li><a href="commonwealth-mh-lc.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-mh-lc.html">Katipunan Avenue</a></li>
+            <li><a href="smn-mh-lc.html">North Avenue</a></li>
+            <li><a href="philcoa-mh-lc.html">Philcoa</a></li>
+            <li><a href="qave-mh-lc.html">Quezon Avenue</a></li>    
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#">Institute of Math</a></h4>
+          <ul>
+            <li><a href="commonwealth-scicomplex.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-scicomplex.html">Katipunan Avenue</a></li>
+            <li><a href="smn-scicomplex.html">North Avenue</a></li>
+            <li><a href="philcoa-scicomplex.html">Philcoa</a></li>
+            <li><a href="qave-scicomplex.html">Quezon Avenue</a></li>          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#">National Institute of Physics</a></h4>
+          <ul>
+            <li><a href="commonwealth-scicomplex.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-scicomplex.html">Katipunan Avenue</a></li>
+            <li><a href="smn-scicomplex.html">North Avenue</a></li>
+            <li><a href="philcoa-scicomplex.html">Philcoa</a></li>
+            <li><a href="qave-scicomplex.html">Quezon Avenue</a></li>          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#">Institute of Chemistry</a></h4>
+          <ul>
+            <li><a href="commonwealth-scicomplex.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-scicomplex.html">Katipunan Avenue</a></li>
+            <li><a href="smn-scicomplex.html">North Avenue</a></li>
+            <li><a href="philcoa-scicomplex.html">Philcoa</a></li>
+            <li><a href="qave-scicomplex.html">Quezon Avenue</a></li>          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#"> CHE Gusali 2 (College of Home Economics)  </a></h4>
+          <ul>
+            <li><a href="commonwealth-che.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-che.html">Katipunan Avenue</a></li>
+            <li><a href="smn-che.html">North Avenue</a></li>
+            <li><a href="philcoa-che.html">Philcoa</a></li>
+            <li><a href="qave-che.html">Quezon Avenue</a></li>    
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#">College of Engineering</a></h4>
+          <ul>
+            <li><a href="commonwealth-engg.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-engg.html">Katipunan Avenue</a></li>
+            <li><a href="smn-engg.html">North Avenue</a></li>
+            <li><a href="philcoa-engg.html">Philcoa</a></li>
+            <li><a href="qave-engg.html">Quezon Avenue</a></li>   
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#">Institute of Biology (Pav 4)</a></h4>
+          <ul>
+            <li><a href="commonwealth-bio.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-bio.html">Katipunan Avenue</a></li>
+            <li><a href="smn-bio.html">North Avenue</a></li>
+            <li><a href="philcoa-bio.html">Philcoa</a></li>
+            <li><a href="qave-bio.html">Quezon Avenue</a></li>
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h4><a href="#">NIGS (National Institute of Geological Sciences)</a></h4>
+          <ul>
+            <li><a href="commonwealth-nigs.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-nigs.html">Katipunan Avenue</a></li>
+            <li><a href="smn-nigs.html">North Avenue</a></li>
+            <li><a href="philcoa-nigs.html">Philcoa</a></li>
+            <li><a href="qave-nigs.html">Quezon Avenue</a></li>    
+          </ul>
+        </div> 
+        <div class="menu-item">
+          <h4><a href="#">College of Architecture</a></h4>
+          <ul>
+            <li><a href="commonwealth-arki.html">Commonwealth Avenue</a></li>
+            <li><a href="katips-arki.html">Katipunan Avenue</a></li>
+            <li><a href="philcoa-arki.html">Philcoa</a></li>
+            <li><a href="smn-arki.html">North Avenue</a></li>
+            <li><a href="qave-arki.html">Quezon Avenue</a></li>    
+          </ul>
+        </div>
+      </nav>
+

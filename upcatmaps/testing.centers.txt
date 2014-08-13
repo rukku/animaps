@@ -1,0 +1,15 @@
+                <li>College of Business Administration</li>
+                <li>School of Economics</li>
+                <li>School of Labor and Industrial Relations</li>
+                <li>National College of Public Administration and Governance</li>
+                <li>College of Law (Malcolm Hall)</li>
+                <li>Law Center (Bocobo Hall)</li>
+                <li>Institute of Math</li>
+                <li>National Institute of Physics</li>
+                <li>Institute of Chemistry</li>
+                <li> CHE Gusali 2 (College of Home Economics)  </li>
+                <li>College of Engineering</li>
+                <li>Institute of Biology (Pav 4)</li>
+                <li>NIGS (National Institute of Geological Sciences)</li>
+                <li>College of Architecture</li>
+				<li>Electrical and Electronics Engineering Institute</li>
