@@ -142,7 +142,8 @@ p { margin:0px; }
 .spot-phan-shed.active { background-position:-130px -120px; }
 .spot-music-shed { background-position:-130px 0px; }
 .spot-music-shed.active { background-position:-130px -120px; }
-
+.spot-theatre-shed { background-position:-130px 0px; }
+.spot-theatre-shed.active { background-position:-130px -120px; }
 
 .spot-oble { background-position:-780px 0px; }
 .spot-oble.active { background-position:-780px -120px; }
