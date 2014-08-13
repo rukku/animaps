@@ -293,6 +293,10 @@ p { margin:0px; }
 .spot-nismed.active { background-position:-780px -120px; }
 .spot-our { background-position:-780px 0px; }
 .spot-our.active { background-position:-780px -120px; }
+.spot-cs { background-position:-780px 0px; }
+.spot-cs.active { background-position:-780px -120px; }
+.spot-eee { background-position:-780px 0px; }
+.spot-eee.active { background-position:-780px -120px; }
 
 /* Distinguish the "cover page" visually other sections. */
 body.section-0 #map { opacity:0.5; }
