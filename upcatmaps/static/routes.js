@@ -482,6 +482,17 @@ var stops = {
           14.643756060661177
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "theatre-shed"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06594562530516,
+          14.656170577451164
+        ]
+      }
     }
   ]
 };
@@ -1278,6 +1289,17 @@ var green = {
 ;
 
 var geojson = [
+     {
+      "type": "Feature",
+      "properties": {"id": "theatre-shed"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.06594562530516,
+          14.656170577451164
+        ]
+      }
+    },   
     {
       "type": "Feature",
       "properties": {
