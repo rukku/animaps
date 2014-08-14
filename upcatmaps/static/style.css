@@ -95,6 +95,7 @@ p { margin:0px; }
 /*Main stops*/
 .spot-cover { display:none; }
 
+
 /*Transpo stops*/
 .spot-philcoa { background-position:-260px 0px; }
 .spot-philcoa.active { background-position:-260px -0px; }
@@ -181,6 +182,8 @@ p { margin:0px; }
 .spot-chem.active { background-position:-780px -120px; }
 .spot-che { background-position:-780px 0px; }
 .spot-che.active { background-position:-780px -120px; }
+.spot-chegusali2 { background-position:-780px 0px; }
+.spot-chegusali2.active { background-position:-780px -120px; }
 .spot-bio { background-position:-780px 0px; }
 .spot-bio.active { background-position:-780px -120px; }
 .spot-nigs { background-position:-780px 0px; }
