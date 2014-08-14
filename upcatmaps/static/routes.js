@@ -1289,6 +1289,17 @@ var green = {
 ;
 
 var geojson = [
+    {
+      "type": "Feature",
+      "properties": {"id" : "chegusali2"},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.07218980789183,
+          14.651883704234482
+        ]
+      }
+    },
      {
       "type": "Feature",
       "properties": {"id": "theatre-shed"},
