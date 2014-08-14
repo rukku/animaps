@@ -126,7 +126,7 @@ p { margin:0px; }
 .spot-math.active { background-position:-780px -120px; }
 .spot-chem { background-position:-910px 0px; } 
 .spot-chem.active { background-position:-780px -120px; }
-.spot-che { background-position:-910px 0px; } 
+.spot-che { background-position:-780px 0px; } 
 .spot-che.active { background-position:-780px -120px; }
 .spot-chegusali2 { background-position:-910px 0px; } 
 .spot-chegusali2.active { background-position:-780px -120px; }
@@ -198,7 +198,7 @@ p { margin:0px; }
 .spot-checkpoint.active { background-position:-780px -120px; }
 .spot-fc-stop { background-position:-780px 0px; }
 .spot-fc-stop.active { background-position:-780px -120px; }
-.spot-chegusali2 { background-position:-780px 0px; }
+.spot-chegusali2 { background-position:-910px 0px; }
 .spot-chegusali2.active { background-position:-780px -120px; }
 
 
@@ -308,7 +308,7 @@ p { margin:0px; }
 .spot-our.active { background-position:-780px -120px; }
 .spot-cs { background-position:-780px 0px; }
 .spot-cs.active { background-position:-780px -120px; }
-.spot-eee { background-position:-780px 0px; }
+.spot-eee { background-position:-910px 0px; }
 .spot-eee.active { background-position:-780px -120px; }
 
 /* Distinguish the "cover page" visually other sections. */
