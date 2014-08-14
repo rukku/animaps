@@ -95,6 +95,50 @@ p { margin:0px; }
 /*Main stops*/
 .spot-cover { display:none; }
 
+/*Overrides for Testing Centers*/
+.spot-oble { background-position:-910px 0px; } 
+.spot-oble.active { background-position:-780px -120px; }
+.spot-theatre { background-position:-910px 0px; } 
+.spot-theatre.active { background-position:-780px -120px; }
+.spot-checkpoint { background-position:-910px 0px; } 
+.spot-checkpoint.active { background-position:-780px -120px; }
+.spot-cal { background-position:-910px 0px; } 
+.spot-cal.active { background-position:-780px -120px; }
+.spot-fc-stop { background-position:-910px 0px; } 
+.spot-fc-stop.active { background-position:-780px -120px; }
+.spot-cmc { background-position:-910px 0px; } 
+.spot-cmc.active { background-position:-780px -120px; }
+.spot-as { background-position:-910px 0px; } 
+.spot-as.active { background-position:-780px -120px; }
+.spot-se { background-position:-910px 0px; } 
+.spot-se.active { background-position:-780px -120px; }
+.spot-solair { background-position:-910px 0px; } 
+.spot-solair.active { background-position:-780px -120px; }
+.spot-ncpag { background-position:-910px 0px; } 
+.spot-ncpag.active { background-position:-780px -120px; }
+.spot-law { background-position:-910px 0px; } 
+.spot-law.active { background-position:-780px -120px; }
+.spot-law-center { background-position:-910px 0px; } 
+.spot-law-center.active { background-position:-780px -120px; }
+.spot-physics { background-position:-910px 0px; } 
+.spot-physics.active { background-position:-780px -120px; }
+.spot-math { background-position:-910px 0px; } 
+.spot-math.active { background-position:-780px -120px; }
+.spot-chem { background-position:-910px 0px; } 
+.spot-chem.active { background-position:-780px -120px; }
+.spot-che { background-position:-910px 0px; } 
+.spot-che.active { background-position:-780px -120px; }
+.spot-chegusali2 { background-position:-910px 0px; } 
+.spot-chegusali2.active { background-position:-780px -120px; }
+.spot-nigs { background-position:-910px 0px; } 
+.spot-nigs.active { background-position:-780px -120px; }
+.spot-arki { background-position:-910px 0px; }
+.spot-arki.active { background-position:-780px -120px; }
+.spot-engg { background-position:-910px 0px; } 
+.spot-engg.active { background-position:-780px -120px; }
+
+
+
 
 /*Transpo stops*/
 .spot-philcoa { background-position:-260px 0px; }
@@ -152,46 +196,11 @@ p { margin:0px; }
 .spot-theatre.active { background-position:-780px -120px; }
 .spot-checkpoint { background-position:-780px 0px; }
 .spot-checkpoint.active { background-position:-780px -120px; }
-.spot-cal { background-position:-780px 0px; }
-.spot-cal.active { background-position:-780px -120px; }
 .spot-fc-stop { background-position:-780px 0px; }
 .spot-fc-stop.active { background-position:-780px -120px; }
-.spot-music { background-position:-780px 0px; }
-.spot-music.active { background-position:-780px -120px; }
-.spot-cmc { background-position:-780px 0px; }
-.spot-cmc.active { background-position:-780px -120px; }
-.spot-as { background-position:-780px 0px; }
-.spot-as.active { background-position:-780px -120px; }
-.spot-cba { background-position:-780px 0px; }
-.spot-cba.active { background-position:-780px -120px; }
-.spot-se { background-position:-780px 0px; }
-.spot-se.active { background-position:-780px -120px; }
-.spot-solair { background-position:-780px 0px; }
-.spot-solair.active { background-position:-780px -120px; }
-.spot-ncpag { background-position:-780px 0px; }
-.spot-ncpag.active { background-position:-780px -120px; }
-.spot-law { background-position:-780px 0px; }
-.spot-law.active { background-position:-780px -120px; }
-.spot-law-center { background-position:-780px 0px; }
-.spot-law-center.active { background-position:-780px -120px; }
-.spot-physics { background-position:-780px 0px; }
-.spot-physics.active { background-position:-780px -120px; }
-.spot-math { background-position:-780px 0px; }
-.spot-math.active { background-position:-780px -120px; }
-.spot-chem { background-position:-780px 0px; }
-.spot-chem.active { background-position:-780px -120px; }
-.spot-che { background-position:-780px 0px; }
-.spot-che.active { background-position:-780px -120px; }
 .spot-chegusali2 { background-position:-780px 0px; }
 .spot-chegusali2.active { background-position:-780px -120px; }
-.spot-bio { background-position:-780px 0px; }
-.spot-bio.active { background-position:-780px -120px; }
-.spot-nigs { background-position:-780px 0px; }
-.spot-nigs.active { background-position:-780px -120px; }
-.spot-arki { background-position:-780px 0px; }
-.spot-arki.active { background-position:-780px -120px; }
-.spot-engg { background-position:-780px 0px; }
-.spot-engg.active { background-position:-780px -120px; }
+
 
 .spot-che-bridge { background-position:-780px 0px; }
 .spot-che-bridge.active { background-position:-780px -120px; }
