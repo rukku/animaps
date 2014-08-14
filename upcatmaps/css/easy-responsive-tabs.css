@@ -181,8 +181,8 @@ h2.resp-accordion:first-child {
 
     .resp-vtabs .resp-tabs-container {
         border: none;
-        float: none;
-        width: 60%;
+        float: left;
+        width: 50%;
         min-height: initial;
         clear: none;
     }
