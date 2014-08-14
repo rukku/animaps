@@ -193,3 +193,39 @@ h2.resp-accordion:first-child {
         border-bottom: 1px solid #c1c1c1 !important;
     }
 }
+
+#rightcontent {
+  opacity:0.5;
+}
+
+#rightcontent p.slogan {
+  position:fixed; top:70%; right:50px;
+  font-weight:bold;
+  font-style:normal;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #bdbebd;
+}
+
+#rightcontent p.navbar {
+  position:fixed; top:60%; right:50px;
+  font-weight:bold;
+  font-style:normal;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #bdbebd;
+  }
+
+#rightcontent p.navbar a:link {
+  text-decoration:none;
+  color:#484848;}
+#rightcontent p.navbar a:visited {
+  text-decoration:none;
+  color:#484848;}
+#rightcontent p.navbar a:hover {
+  text-decoration:none;
+  background-color:#FF704D;}
+#rightcontent p.navbar a:active {
+  text-decoration:none;
+  background-color:#FF704D;}
+}
