@@ -22,10 +22,29 @@
 
 
 <!--Loads Prototype.js-->
-<script src="js/jquery-1.10.2.min.js"></script>
 
 <script src="js/prototype.js" type="text/javascript" charset="utf-8"></script>
 
+ <!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('7983-775-10-5201');/*]]>*/</script><noscript><a href="https://www.olark.com/site/7983-775-10-5201/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
 
 
 <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
@@ -39,11 +58,16 @@ mixpanel.init("91d0d93e1754206244323d4c65568f8f");</script><!-- end Mixpanel -->
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
+
+
+
 </head>
  <script type="text/javascript">
     mixpanel.track("iskomaps loaded")
 </script>
 <body>
+
+
 <header id="branding" role="banner" class="clearfix">
   <hgroup id="logo">
     <div class="ribbon">
@@ -62,34 +86,31 @@ mixpanel.init("91d0d93e1754206244323d4c65568f8f");</script><!-- end Mixpanel -->
         if (Prototype.Browser.MobileSafari) {jQuery('#brief').hide()}
     </script>
     <div class="column first" id="brief_first">
-        <h2><img src="cat.logo.small.png" alt="UP Cat"><br />
-            <small>Maps maps<br />
-            by <a href="http://rukku.bitbucket.org/upcat/routes/about.html">UPCAT Maps</a>
+        <h2><img src="logo.png" alt="UP Cat"><br />
+            <small> Because the campus is huge <br />
+            by <a href="about.html">DiliMaps</a>
             <br />
-            <a href="http://wiki.cartagen.org">More Info</a> |
-            <a href="http://github.com/jywarren/cartagen/">Source</a> |
-            <a href="http://unterbahn.com/tag/cartagen/">Blog</a>
+  
             </small></h2>
     </div>
     <div id="description">
-      <div style="float:right;margin:5px;"><a href="javascript:void(0);" onClick="$('description').hide();$('brief').style.width = '28%';$('brief_first').style.width = '92%';"></a></div>
+      <div style="float:right;margin:5px;"><a href="javascript:void(0);" onClick="$('#description').hide();$('#brief').style.width = '28%';$('#brief_first').style.width = '92%';">Hide</a></div>
   
-        <div class="column">
-            <h3>Freshie Maps</h3>
-            <p>A commuting guide for freshies <p>
-
-			<p>We'll tell you how to go where you need to go! We don't want you getting lost around the campus that often, dear freshies</p>
-            
-        </div>
         <div class="column">
             <h3><a href="upcatmaps">UPCAT Maps</a></h3>
 			
             <p> We've got you covered! Save yourself from the hassle of getting lost inside the campus as you take one of the most crucial exams in your life. </p>
         </div>
         <div class="column">
-            <h3>About us</h3>
-            <p>We're a group of young UP alumni, just normal people with daytime jobs, who got together to do something useful. Some of you might remember us. </p>
+            <h3>Freshie Maps</h3>
+            <p>A commuting guide for freshies <p>
 
+        <img src="comingsoon.bw.png" alt="comingsoon">
+            
+        </div>
+        <div class="column">
+            <h3><a href="about.html">About us</a></h3>
+            <p>We're a group of young UP alumni, just normal people with day jobs, who got together to try and do something useful.</p>
         </div>
     </div> 
 </div>

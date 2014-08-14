@@ -65,7 +65,12 @@ a.button.green:active {
 	background:#4F5F37 top repeat-x;
 }
 
-img { border:0; }
+img { border:0;
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+
+ }
 
 input {
 	font-size:1.6em;
@@ -157,7 +162,7 @@ canvas {
 	margin-bottom:16px;
 }
 #brief div.column.first {
-	width:22%;
+	width:19%;
 }
 #brief h3 {
 	margin-top:20px;
