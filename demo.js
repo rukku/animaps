@@ -491,7 +491,7 @@ ovalroute = [L.polyline([[14.6550391832, 121.064282656],
       onEnd: function() {
 	drawBike(i, routeLine);
 	  $(this._shadow).fadeOut();
-        $(this._icon).fadeOut(100, function(){
+        $(this._icon).fadeOut(3000, function(){
           map.removeLayer(this);
 		  
         });
